@@ -15,19 +15,23 @@ class Experimentos:
         self.resultados = resultados
         
 
-def agregar_experimento(listadeExperimentos):
+def agregar_experimento():
     nombre= input ("ingrese el nombre del experimento")
     fechaExperimento_str= input ("ingrese la fecha del experimento")
     try:
-        fechaExperimento= datetime.strptime(fechaExperimento_str, "%d%m/%Y")
+        fechaExperimento = datetime.strptime(fechaExperimento_str, "%d/%m/%Y")
     
     except ValueError:
         print("Error: la fecha ingresada no es valida.")
         return
-        
-            
+  
+    tipo= input("ingrese el tipo de experimento(quimica, Fisica, Biologia, Ciencias Naturales):") 
+  
+    resultados= input("ingrese los resultados numericos del experimento")
+              
     experimento= Experimentos(nombre,fechaExperimento, tipo, resultados)
-    listaDeExperimentos.append(Experimentos)
+    
+    listaDeExperimentos.append([nombre,fechaExperimento_str,tipo,resultados])
     print("Experimento agregado correctamente")
     # permite agregar experimentos con sus nuevos atributos
     pass
