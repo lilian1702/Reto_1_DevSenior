@@ -2,11 +2,33 @@ import datetime
 
 listaDeExperimentos = [
     ["experimento1", "16/11/2024","quimica", [5,4,3,2,1]],
+    ["experimento2", "16/11/2024","Fisica", [8,9,10,11]],
+    ["experimento3", "17/11/2024","Ciencias Naturales", [7,6,5,4,3]],
+    ["experimento4", "18/11/2024","Biologia", [9,8,7,6,5]],
 ]
 
+class Experimentos:
+    def __init__(self, nombre, fechaExperimento, tipo, resultados):
+        self.nombre = nombre
+        self.fechaExperimento = fechaExperimento
+        self.tipo = tipo
+        self.resultados = resultados
+        
 
-
-def agregar_experimento():
+def agregar_experimento(listadeExperimentos):
+    nombre= input ("ingrese el nombre del experimento")
+    fechaExperimento_str= input ("ingrese la fecha del experimento")
+    try:
+        fechaExperimento= datetime.strptime(fechaExperimento_str, "%d%m/%Y")
+    
+    except ValueError:
+        print("Error: la fecha ingresada no es valida.")
+        return
+        
+            
+    experimento= Experimentos(nombre,fechaExperimento, tipo, resultados)
+    listaDeExperimentos.append(Experimentos)
+    print("Experimento agregado correctamente")
     # permite agregar experimentos con sus nuevos atributos
     pass
 
