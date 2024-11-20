@@ -16,8 +16,8 @@ class Experimentos:
         
 
 def agregar_experimento():
-    nombre= input ("ingrese el nombre del experimento")
-    fechaExperimento_str= input ("ingrese la fecha del experimento")
+    nombre = input("ingrese el nombre del experimento: ")
+    fechaExperimento_str= input ("ingrese la fecha del experimento: ")
     try:
         fechaExperimento = datetime.strptime(fechaExperimento_str, "%d/%m/%Y")
     
@@ -30,7 +30,6 @@ def agregar_experimento():
     resultados= input("ingrese los resultados numericos del experimento")
               
     experimento= Experimentos(nombre,fechaExperimento, tipo, resultados)
-    
     listaDeExperimentos.append([nombre,fechaExperimento_str,tipo,resultados])
     print("Experimento agregado correctamente")
     # permite agregar experimentos con sus nuevos atributos
